@@ -67,7 +67,7 @@ class Trips {
               res.status(200).send({
                 message: 'Trip updated successfully',
                 data: {
-                  name: name || updatedRider.name,
+                  name: name || updatedTrip.name,
                   startingtime: startingtime || updatedTrip.startingtime,
                   completetime: completetime || updatedTrip.completetime,
                   driverId: driverId || updatedTrip.driverId

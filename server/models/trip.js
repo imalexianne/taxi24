@@ -1,25 +1,25 @@
-'use strict';
-module.exports = (sequelize, DataTypes) => {
-  const Trip = sequelize.define('Trip', {
-    name: DataTypes.STRING,
-    startingtime: DataTypes.STRING,
-    completetime: DataTypes.STRING,
-    driverId: DataTypes.INTEGER
-  }, {});
-  Trip.associate = function(models) {
-    // associations can be defined here
-    Trip.hasMany(models.Rider, {
-      foreignKey: 'tripId',
-    });
-    Trip.belongsTo(models.Driver, {
-      foreignKey: 'driverId',
-      onDelete: 'CASCADE'
-    });
+// 'use strict';
+// module.exports = (sequelize, DataTypes) => {
+//   const Trip = sequelize.define('Trip', {
+//     name: DataTypes.STRING,
+//     startingtime: DataTypes.STRING,
+//     completetime: DataTypes.STRING,
+//     driverId: DataTypes.INTEGER
+//   }, {});
+//   Trip.associate = function(models) {
+//     // associations can be defined here
+//     Trip.hasMany(models.Rider, {
+//       foreignKey: 'tripId',
+//     });
+//     Trip.belongsTo(models.Driver, {
+//       foreignKey: 'driverId',
+//       onDelete: 'CASCADE'
+//     });
   
-  };
+//   };
 
-  return Trip;
-};
+//   return Trip;
+// };
 
 export default (sequelize, DataTypes) => {
   const Trip = sequelize.define('Trip', {
@@ -30,7 +30,7 @@ export default (sequelize, DataTypes) => {
         msg: 'Please enter the name (start point-end point) for the trip'
       }
     },
-    starttime: {
+    startingtime: {
       type: DataTypes.STRING,
       allowNull: {
         args: false,
@@ -54,6 +54,21 @@ export default (sequelize, DataTypes) => {
       }
     }
   }, {});
+
+  Trip.associate = function(models) {
+    // associations can be defined here
+    Trip.hasMany(models.Rider, {
+      foreignKey: 'tripId',
+    });
+    Trip.belongsTo(models.Driver, {
+      foreignKey: 'driverId',
+      onDelete: 'CASCADE'
+    });
+  
+  };
+
+  return Trip;
+};
   // Trip.associate = (models) => {
   //   // associations can be defined here
   // };
@@ -75,4 +90,3 @@ export default (sequelize, DataTypes) => {
 //   });
 // };
 // return Driver;
-}
