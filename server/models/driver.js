@@ -9,6 +9,13 @@ module.exports = (sequelize, DataTypes) => {
     closestdrivers: DataTypes.STRING
   }, {});
   Driver.associate = function(models) {
+    Driver.hasMany(models.Trip, {
+      foreignKey: 'driverId',
+    });
+    Driver.hasMany(models.Rider, {
+      foreignKey: 'driverId',
+    });
+  
     // associations can be defined here
   };
   return Driver;
@@ -79,18 +86,21 @@ export default (sequelize, DataTypes) => {
 
   // };
 
-  Driver.associate = (models) => {
-    // associations can be defined here
-    Driver.hasMany(models.Trip, {
-      foreignKey: 'driverId',
-    });
-  };
-  Driver.associate = (models) => {
-    // associations can be defined here
-    Driver.hasMany(models.Rider, {
-      foreignKey: 'driverId',
-    });
-  };
+//   Driver.associate = (models) => {
+//     // associations can be defined here
+//     Driver.hasMany(models.Trip, {
+//       foreignKey: 'driverId',
+//     });
+//     Driver.hasMany(models.Rider, {
+//       foreignKey: 'driverId',
+//     });
+//   };
+//   // Driver.associate = (models) => {
+//   //   // associations can be defined here
+//   //   Driver.hasMany(models.Rider, {
+//   //     foreignKey: 'driverId',
+//   //   });
+//   // };
 
-  return Driver;
-};
+//   return Driver;
+}

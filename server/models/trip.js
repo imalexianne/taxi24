@@ -8,7 +8,16 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Trip.associate = function(models) {
     // associations can be defined here
+    Trip.hasMany(models.Rider, {
+      foreignKey: 'tripId',
+    });
+    Trip.belongsTo(models.Driver, {
+      foreignKey: 'driverId',
+      onDelete: 'CASCADE'
+    });
+  
   };
+
   return Trip;
 };
 
@@ -49,20 +58,21 @@ export default (sequelize, DataTypes) => {
   //   // associations can be defined here
   // };
 
-  Trip.associate = (models) => {
-    // associations can be defined here
-    Trip.hasMany(models.Rider, {
-      foreignKey: 'tripId',
-    });
-  };
-  return Trip;
-};
+//   Trip.associate = (models) => {
+//     // associations can be defined here
+//     Trip.hasMany(models.Rider, {
+//       foreignKey: 'tripId',
+//     });
+//   };
+//   return Trip;
+// };
 
-Trip.associate = (models) => {
-  // associations can be defined here
-  Trip.belongsTo(models.Driver, {
-    foreignKey: 'driverId',
-    onDelete: 'CASCADE'
-  });
-};
-return Driver;
+// Trip.associate = (models) => {
+//   // associations can be defined here
+//   Trip.belongsTo(models.Driver, {
+//     foreignKey: 'driverId',
+//     onDelete: 'CASCADE'
+//   });
+// };
+// return Driver;
+}
