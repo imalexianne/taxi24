@@ -51,13 +51,15 @@ I used the terminal from ubuntu operating system
 
 10. run the command below to set up babel
 
-   npm install babel-preset-env --save-dev
-   npm install babel-cli --save
-   npm install babel-core --save
+    npm install babel-preset-env --save-dev
+
+    npm install babel-cli --save
+
+    npm install babel-core --save
 
 11. Install express alongside some dependencies
 
-   npm install express body-parser morgan
+    npm install express body-parser morgan
 
 12. We need to install nodemon to restart our server whenever we make changes to any of our     file.
 
