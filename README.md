@@ -1,9 +1,9 @@
-# Taxi24
+# taxi24
 
 ## By IMANIRAKARAMA Alexianne
 
 ## Introduction
-With this Taxi24 application I built a set of APIs that other companies can use to manage their fleet of drivers and allocate drivers to passengers.
+With this taxi24 application I built a set of APIs that other companies can use to manage their fleet of drivers and allocate drivers to passengers.
 
 
 ## Project description
@@ -14,23 +14,29 @@ Javascript, Nodejs, PostgreSQL, Postman, RESTful_API.
 I used the terminal from ubuntu operating system 
 
 ## Project set up and installations
-1. We have to update & upgrade our Ubuntu to latest packages using the commands below in terminal:
+1. We have to update & upgrade our Ubuntu to latest packages using the commands below in terminal
+
 sudo apt-get update && sudo apt-get upgrade
 
-2. Install PostgreSQL by running the command below:
+2. Install PostgreSQL by running the command below
+
 sudo apt-get install postgresql
 
 3. Now that our PostgreSQL database is ready. we can log into PostgreSQL and create a username and a database.
+
 sudo - su postgres
 psql
 
 4. Create a username by running the command below
+
 CREATE USER bkuser SUPERUSER;
 
 5. We have to create a password for the user with the command below
+
 ALTER USER bkuser WITH PASSWORD '123';
 
 6. To create a database with the user created, run
+
 CREATE DATABASE taxi24 WITH OWNER bkuser;
 
 7. To exit from psql shell, run \q.
@@ -62,18 +68,23 @@ npm install -g sequelize-cli
 createdb taxi24
 
 14. To create a driver model run the command
+
 sequelize model:create --name Driver --attributes name:string,username:string,email:string,password:string,location:string,closestdrivers:string
 
 15. To create a trip model run the command
+
 sequelize model:create --name Trip --attributes name:string,startingtime:string,completetime:string,driverId:integer
 
 16. To create a rider model run the command
+
 sequelize model:create --name Rider --attributes name:string,driverId:integer,tripId:integer
 
 17. For migration run the command
+
 Sequelize db:migrate
 
 18. Run server with the command
+
 npm start
 
 19. Navigate to http://127.0.0.1:3000/. 
