@@ -18,85 +18,93 @@ I used the terminal from ubuntu operating system
 
    sudo apt-get update && sudo apt-get upgrade
 
-2. Install PostgreSQL by running the command below
+2. To be used on your machine run the command
+
+   git clone https://github.com/imalexianne/taxi24.git 
+
+3. Run the command 
+
+   cd taxi24
+
+4. Install PostgreSQL by running the command below
 
    sudo apt-get install postgresql
 
-3. Now that our PostgreSQL database is ready. we can log into PostgreSQL and create a username and a database.
+5. Now that our PostgreSQL database is ready. we can log into PostgreSQL and create a username and a database.
 
    sudo - su postgres
    psql
 
-4. Create a username by running the command below
+6. Create a username by running the command below
 
    CREATE USER bkuser SUPERUSER;
 
-5. We have to create a password for the user with the command below
+7. We have to create a password for the user with the command below
 
    ALTER USER bkuser WITH PASSWORD '123';
 
-6. To create a database with the user created, run
+8. To create a database with the user created, run
 
    CREATE DATABASE taxi24 WITH OWNER bkuser;
 
-7. To exit from psql shell, run \q.
+9. To exit from psql shell, run \q.
 
-8. run the command below to set up babel
+10. run the command below to set up babel
 
    npm install babel-preset-env --save-dev
    npm install babel-cli --save
    npm install babel-core --save
 
-9. Install express alongside some dependencies
+11. Install express alongside some dependencies
 
    npm install express body-parser morgan
 
-10. We need to install nodemon to restart our server whenever we make changes to any of our     file.
+12. We need to install nodemon to restart our server whenever we make changes to any of our     file.
 
     npm install --save-dev nodemon
 
-11. With our application up and running, we need to install the sequelize library to            connect to our postgreSQL database.
+13. With our application up and running, we need to install the sequelize library to            connect to our postgreSQL database.
 
     npm install sequelize pg pg-hstore
 
-12. We need to install the sequelize CLI which enable us to run database migration easily       from the terminal and bootstrap a new project.
+14. We need to install the sequelize CLI which enable us to run database migration easily       from the terminal and bootstrap a new project.
 
     npm install -g sequelize-cli
 
-13. Run the command below to create a database
+15. Run the command below to create a database
 
     createdb taxi24
 
-14. To create a driver model run the command
+16. To create a driver model run the command
 
     sequelize model:create --name Driver --attributes name:string,username:string,email:string,password:string,location:string,closestdrivers:string
 
-15. To create a trip model run the command
+17. To create a trip model run the command
 
     sequelize model:create --name Trip --attributes name:string,startingtime:string,completetime:string,driverId:integer
 
-16. To create a rider model run the command
+18. To create a rider model run the command
 
     sequelize model:create --name Rider --attributes name:string,driverId:integer,tripId:integer
 
-17. For migration run the command
+19. For migration run the command
 
     Sequelize db:migrate
 
-18. Run server with the command
+20. Run server with the command
 
     npm start
 
-19. Navigate to http://127.0.0.1:3000/. 
+21. Navigate to http://127.0.0.1:3000/. 
     The app will automatically reload if you change any of the source files.
 
-20. Using Postman, you will be able to create, update and delete any data.
+22. Using Postman, you will be able to create, update and delete any data.
 
-21. To get the list of riders navigate to http://127.0.0.1:3000/riders
+23. To get the list of riders navigate to http://127.0.0.1:3000/riders
 
-22. To get the list of drivers navigate to http://127.0.0.1:3000/drivers
+24. To get the list of drivers navigate to http://127.0.0.1:3000/drivers
 
-23. To get the list of trips navigate to http://127.0.0.1:3000/trips
+25. To get the list of trips navigate to http://127.0.0.1:3000/trips
 
 
 ## Link to live site on Github 
