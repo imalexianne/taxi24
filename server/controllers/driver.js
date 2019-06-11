@@ -35,7 +35,7 @@ class Drivers {
 
       static find(req, res) {
         return Driver
-          .findBylocation(req.params.driverLocation)
+          .findbylocation(req.params.location)
           .then(drivers => res.status(200).send(drivers));
       }
 

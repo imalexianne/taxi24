@@ -22,7 +22,7 @@ export default (app) => {
     app.delete('/api/trips/:tripId', Trips.delete); // API route to delete a trip
     app.get('/api/drivers/:driverId', Drivers.get); // API route for user to get driver by id in the database
     app.get('/api/riders/:riderId', Riders.get); // API route for user to get rider by id in the database
-    app.get('/api/drivers/:driverLocation', Drivers.find); // API route for user to get driver by location in the database
+    app.get('/api/drivers/locations/:location', Drivers.find); // API route for user to get driver by location in the database
 };
 
 // import Riders from '../controllers/riders';

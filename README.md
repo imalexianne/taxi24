@@ -102,11 +102,11 @@ I used the terminal from ubuntu operating system
 
 22. Using Postman, you will be able to create, update and delete any data.
 
-23. To get the list of riders navigate to http://127.0.0.1:3000/riders
+23. To get the list of riders navigate to http://127.0.0.1:3000/api/riders
 
-24. To get the list of drivers navigate to http://127.0.0.1:3000/drivers
+24. To get the list of drivers navigate to http://127.0.0.1:3000/api/drivers
 
-25. To get the list of trips navigate to http://127.0.0.1:3000/trips
+25. To get the list of trips navigate to http://127.0.0.1:3000/api/trips
 
 
 ## Link to live site on Github 
