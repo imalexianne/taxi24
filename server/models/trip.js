@@ -55,6 +55,7 @@ export default (sequelize, DataTypes) => {
     }
   }, {});
 
+  
   Trip.associate = function(models) {
     // associations can be defined here
     Trip.hasMany(models.Rider, {

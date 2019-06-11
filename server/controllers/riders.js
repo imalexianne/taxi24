@@ -49,6 +49,12 @@ class Riders {
           .then(riders => res.status(200).send(riders));
       }
 
+      static get(req, res) {
+        return Rider
+          .findByPk(req.params.riderId)
+          .then(riders => res.status(200).send(riders));
+      }
+
       static modify(req, res) {
         const { name, driverId, tripId } = req.body
         return Rider

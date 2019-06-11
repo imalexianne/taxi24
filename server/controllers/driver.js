@@ -26,7 +26,14 @@ class Drivers {
           .findAll()
           .then(drivers => res.status(200).send(drivers));
       }
+      static get(req, res) {
+        return Driver
+          .findByPk(req.params.driverId)
+          .then(drivers => res.status(200).send(drivers));
+      }
 
+      
+      
       static modify(req, res) {
         const { name, username, email, password,location,closestdrivers } = req.body
         return Driver

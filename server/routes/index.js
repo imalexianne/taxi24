@@ -20,6 +20,8 @@ export default (app) => {
     app.get('/api/trips', Trips.list); // API route to get all trips in the database
     app.put('/api/trips/:tripId', Trips.modify); // API route to edit a trip
     app.delete('/api/trips/:tripId', Trips.delete); // API route to delete a trip
+    app.get('/api/drivers/:driverId', Drivers.get); // API route for user to get driver by id in the database
+    app.get('/api/riders/:riderId', Riders.get); // API route for user to get driver by id in the database
 };
 
 // import Riders from '../controllers/riders';
