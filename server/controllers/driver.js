@@ -31,8 +31,14 @@ class Drivers {
           .findByPk(req.params.driverId)
           .then(drivers => res.status(200).send(drivers));
       }
-
       
+
+      static find(req, res) {
+        return Driver
+          .findBylocation(req.params.driverLocation)
+          .then(drivers => res.status(200).send(drivers));
+      }
+
       
       static modify(req, res) {
         const { name, username, email, password,location,closestdrivers } = req.body
