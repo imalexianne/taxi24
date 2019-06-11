@@ -51,44 +51,44 @@ I used the terminal from ubuntu operating system
 
    npm install express body-parser morgan
 
-10. We need to install nodemon to restart our server whenever we make changes to any of our file.
+10. We need to install nodemon to restart our server whenever we make changes to any of our     file.
 
-   npm install --save-dev nodemon
+    npm install --save-dev nodemon
 
-11. With our application up and running, we need to install the sequelize library to connect to our postgreSQL database.
+11. With our application up and running, we need to install the sequelize library to            connect to our postgreSQL database.
 
-   npm install sequelize pg pg-hstore
+    npm install sequelize pg pg-hstore
 
-12. We need to install the sequelize CLI which enable us to run database migration easily from the terminal and bootstrap a new project.
+12. We need to install the sequelize CLI which enable us to run database migration easily       from the terminal and bootstrap a new project.
 
-   npm install -g sequelize-cli
+    npm install -g sequelize-cli
 
 13. Run the command below to create a database
 
-   createdb taxi24
+    createdb taxi24
 
 14. To create a driver model run the command
 
-   sequelize model:create --name Driver --attributes name:string,username:string,email:string,password:string,location:string,closestdrivers:string
+    sequelize model:create --name Driver --attributes name:string,username:string,email:string,password:string,location:string,closestdrivers:string
 
 15. To create a trip model run the command
 
-   sequelize model:create --name Trip --attributes name:string,startingtime:string,completetime:string,driverId:integer
+    sequelize model:create --name Trip --attributes name:string,startingtime:string,completetime:string,driverId:integer
 
 16. To create a rider model run the command
 
-   sequelize model:create --name Rider --attributes name:string,driverId:integer,tripId:integer
+    sequelize model:create --name Rider --attributes name:string,driverId:integer,tripId:integer
 
 17. For migration run the command
 
-   Sequelize db:migrate
+    Sequelize db:migrate
 
 18. Run server with the command
 
-   npm start
+    npm start
 
 19. Navigate to http://127.0.0.1:3000/. 
-   The app will automatically reload if you change any of the source files.
+    The app will automatically reload if you change any of the source files.
 
 20. Using Postman, you will be able to create, update and delete any data.
 
