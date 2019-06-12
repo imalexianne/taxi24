@@ -41,7 +41,7 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: {
         args: false,
-        msg: 'Pease input a complete time'
+        msg: 'Please input a complete time'
       }
     },
    

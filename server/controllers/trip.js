@@ -51,10 +51,16 @@ class Trips {
           .then(trips => res.status(200).send(trips));
       }
 
+      static get(req, res) {
+        return Trip
+          .findByPk(req.params.tripId)
+          .then(trips => res.status(200).send(trips));
+      }
+
       static modify(req, res) {
         const { name, startingtime, completetime, driverId } = req.body
         return Trip
-          .findById(req.params.tripId)
+          .findByPk(req.params.tripId)
           .then((trip) => {
             trip.update({
               name: name || trip.name,
@@ -80,7 +86,7 @@ class Trips {
     }
     static delete(req, res) {
         return Trip
-          .findById(req.params.tripId)
+          .findByPk(req.params.tripId)
           .then(trip => {
             if(!trip) {
               return res.status(400).send({

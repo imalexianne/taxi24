@@ -42,16 +42,16 @@ export default (sequelize, DataTypes) => {
         args: false,
         msg: 'Please enter your email address'
       },
-      unique: {
-        args: true,
-        msg: 'Email already exists'
-      },
-      validate: {
-        isEmail: {
-          args: true,
-          msg: 'Please enter a valid email address'
-        },
-      },
+      // unique: {
+      //   args: true,
+      //   msg: 'Email already exists'
+      // },
+      // validate: {
+      //   isEmail: {
+      //     args: true,
+      //     msg: 'Please enter a valid email address'
+      //   },
+      // },
     },
     password: {
       type: DataTypes.STRING,

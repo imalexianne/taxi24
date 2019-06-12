@@ -35,7 +35,7 @@ class Drivers {
 
       static find(req, res) {
         return Driver
-          .findbylocation(req.params.location)
+          .findByPk(req.params.driverLocation)
           .then(drivers => res.status(200).send(drivers));
       }
 
@@ -43,7 +43,7 @@ class Drivers {
       static modify(req, res) {
         const { name, username, email, password,location,closestdrivers } = req.body
         return Driver
-          .findById(req.params.driverId)
+          .findByPk(req.params.driverId)
           .then((driver) => {
             driver.update({
               name: name || driver.name,
@@ -72,7 +72,7 @@ class Drivers {
       }
       static delete(req, res) {
         return Driver
-          .findById(req.params.driverId)
+          .findByPk(req.params.driverId)
           .then(driver => {
             if(!driver) {
               return res.status(400).send({

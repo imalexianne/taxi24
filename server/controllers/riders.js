@@ -58,7 +58,7 @@ class Riders {
       static modify(req, res) {
         const { name, driverId, tripId } = req.body
         return Rider
-          .findById(req.params.riderId)
+          .findByPk(req.params.riderId)
           .then((rider) => {
             rider.update({
               name: name || rider.name,
@@ -83,7 +83,7 @@ class Riders {
       }
       static delete(req, res) {
         return Rider
-          .findById(req.params.riderId)
+          .findByPk(req.params.riderId)
           .then(rider => {
             if(!rider) {
               return res.status(400).send({
