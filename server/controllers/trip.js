@@ -1,27 +1,3 @@
-// import model from '../models';
-
-// const { Trip } = model;
-
-// class Trips {
-//   static create(req, res) {
-//     const { name, startingtime, completetime, driverId } = req.body
-//     const { driverId } = req.params
-//     return Trip
-//       .create({
-//         name,
-//         startingtime,
-//         completetime,
-//         driverId
-//       })
-//       .then(trip => res.status(201).send({
-//         message: `Your trip with the name ${name} has been created successfully `,
-//         trip
-//       }))
-//     }
-// }
-
-// export default Trips
-
 import model from '../models';
 
 const { Trip } = model;
@@ -35,15 +11,13 @@ class Trips {
           startingtime,
           completetime,
           driverId
-           
-          
-        })
+           })
         .then(tripData => res.status(201).send({
           success: true,
           message: 'Trip successfully created',
           tripData
         }))
-    }
+      }
 
     static list(req, res) {
         return Trip

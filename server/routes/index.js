@@ -23,7 +23,7 @@ export default (app) => {
     app.get('/api/drivers/:driverId', Drivers.get); // API route for user to get driver by id in the database
     app.get('/api/riders/:riderId', Riders.get); // API route for user to get rider by id in the database
     app.get('/api/trips/:tripId', Trips.get); // API route for user to get trip by id in the database
-    app.get('/api/drivers/:driverLocation', Drivers.find); // API route for user to get driver by location in the database
+    app.get('/api/drivers/:location', Drivers.find); // API route for user to get driver by location in the database
 };
 
 // import Riders from '../controllers/riders';

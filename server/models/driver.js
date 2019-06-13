@@ -1,25 +1,4 @@
-// 'use strict';
-// module.exports = (sequelize, DataTypes) => {
-//   const Driver = sequelize.define('Driver', {
-//     name: DataTypes.STRING,
-//     username: DataTypes.STRING,
-//     email: DataTypes.STRING,
-//     password: DataTypes.STRING,
-//     location: DataTypes.STRING,
-//     closestdrivers: DataTypes.STRING
-//   }, {});
-//   Driver.associate = function(models) {
-//     Driver.hasMany(models.Trip, {
-//       foreignKey: 'driverId',
-//     });
-//     Driver.hasMany(models.Rider, {
-//       foreignKey: 'driverId',
-//     });
-  
-//     // associations can be defined here
-//   };
-//   return Driver;
-// };
+
 export default (sequelize, DataTypes) => {
   const Driver = sequelize.define('Driver', {
     name: {
@@ -42,16 +21,7 @@ export default (sequelize, DataTypes) => {
         args: false,
         msg: 'Please enter your email address'
       },
-      // unique: {
-      //   args: true,
-      //   msg: 'Email already exists'
-      // },
-      // validate: {
-      //   isEmail: {
-      //     args: true,
-      //     msg: 'Please enter a valid email address'
-      //   },
-      // },
+     
     },
     password: {
       type: DataTypes.STRING,
@@ -92,21 +62,4 @@ export default (sequelize, DataTypes) => {
   return Driver;
 };
 
-//   Driver.associate = (models) => {
-//     // associations can be defined here
-//     Driver.hasMany(models.Trip, {
-//       foreignKey: 'driverId',
-//     });
-//     Driver.hasMany(models.Rider, {
-//       foreignKey: 'driverId',
-//     });
-//   };
-//   // Driver.associate = (models) => {
-//   //   // associations can be defined here
-//   //   Driver.hasMany(models.Rider, {
-//   //     foreignKey: 'driverId',
-//   //   });
-//   // };
-
-//   return Driver;
 

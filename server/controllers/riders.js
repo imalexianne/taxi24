@@ -1,26 +1,4 @@
-// import model from '../models';
 
-// const { Rider } = model;
-
-// class Riders {
-//   static create(req, res) {
-//     const { name, driverId, tripId,} = req.body
-//     const { driverId } = req.params
-//     const { tripId } = req.params
-//     return Rider
-//       .create({
-//         name,
-//         driverId,
-//         tripId,
-//       })
-//       .then(rider => res.status(201).send({
-//         message: `The rider with the name ${name} has been created successfully `,
-//         rider
-//       }))
-//     }
-// }
-
-// export default Riders
 
 import model from '../models';
 
